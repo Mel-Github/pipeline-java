@@ -26,7 +26,7 @@ steps:
     containerRegistry: 'mtrrepository-2108'
     repository: 'pipeline-java'
     command: 'buildAndPush'
-    Dockerfile: 'src/Dockerfile'
+    Dockerfile: '**/Dockerfile'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
