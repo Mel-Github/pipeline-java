@@ -17,6 +17,12 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'mtrrepository-2108'
+    repository: 'pipeline-java'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
